@@ -26,16 +26,17 @@ body {
 .chat-container {
 
     width: 100%;
-    max-width: min(420px, 95vw);
+    max-width: 600px;
+    max-width: min(600px, 90vw);
 
-    height: min(650px, 90vh);
-    height: min(650px, 90dvh);
+    height: min(700px, 85vh);
+    height: min(700px, 85dvh);
 
     background: #1f2937;
 
     border-radius: 20px;
 
-    padding: max(15px, env(safe-area-inset-right)) max(15px, env(safe-area-inset-left));
+    padding: 20px;
 
     display: flex;
     flex-direction: column;
@@ -54,14 +55,14 @@ body {
 
 .header h1 {
     margin: 0 0 5px;
-    font-size: clamp(24px, 5vw, 32px);
+    font-size: clamp(26px, 4vw, 36px);
 }
 
 
 .header p {
     color: #9ca3af;
     margin-top: 0;
-    font-size: clamp(14px, 3vw, 16px);
+    font-size: clamp(15px, 2.5vw, 18px);
 }
 
 
@@ -84,19 +85,21 @@ body {
 
 .message {
 
-    padding: clamp(10px, 2vw, 14px) clamp(12px, 3vw, 18px);
+    padding: clamp(12px, 2vw, 16px) clamp(14px, 3vw, 20px);
 
-    margin: clamp(8px, 1.5vw, 12px) 0;
+    margin: clamp(10px, 1.5vw, 14px) 0;
 
-    border-radius: clamp(12px, 3vw, 18px);
+    border-radius: clamp(14px, 3vw, 20px);
 
     max-width: 85%;
 
-    line-height: 1.4;
+    line-height: 1.5;
 
     word-wrap: break-word;
 
     overflow-wrap: break-word;
+
+    font-size: clamp(15px, 2.5vw, 17px);
 
 }
 
@@ -140,15 +143,15 @@ input {
 
     min-width: 0;
 
-    padding: clamp(10px, 2.5vw, 14px);
+    padding: clamp(12px, 2.5vw, 16px);
 
     border: none;
 
-    border-radius: clamp(8px, 2vw, 12px);
+    border-radius: clamp(10px, 2vw, 14px);
 
     outline: none;
 
-    font-size: clamp(14px, 3vw, 16px);
+    font-size: clamp(15px, 2.5vw, 17px);
 
 }
 
@@ -156,11 +159,11 @@ input {
 
 button {
 
-    padding: clamp(10px, 2.5vw, 14px) clamp(16px, 4vw, 24px);
+    padding: clamp(12px, 2.5vw, 16px) clamp(18px, 4vw, 28px);
 
     border: none;
 
-    border-radius: clamp(8px, 2vw, 12px);
+    border-radius: clamp(10px, 2vw, 14px);
 
     cursor: pointer;
 
@@ -168,7 +171,7 @@ button {
 
     color: white;
 
-    font-size: clamp(14px, 3vw, 16px);
+    font-size: clamp(15px, 2.5vw, 17px);
 
     white-space: nowrap;
 
@@ -178,10 +181,115 @@ button {
 
 
 
+/* Tablets */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .chat-container {
+
+        max-width: 700px;
+
+        height: min(750px, 80vh);
+        height: min(750px, 80dvh);
+
+        padding: 24px;
+
+    }
+
+
+    .header h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .header p {
+
+        font-size: 17px;
+
+    }
+
+
+    .message {
+
+        font-size: 16px;
+
+    }
+
+
+    input {
+
+        font-size: 16px;
+
+    }
+
+
+    button {
+
+        font-size: 16px;
+
+    }
+
+}
+
+
+/* Desktop */
+
+@media (min-width: 1025px) {
+
+    .chat-container {
+
+        max-width: 800px;
+
+        height: min(800px, 75vh);
+        height: min(800px, 75dvh);
+
+        padding: 28px;
+
+    }
+
+
+    .header h1 {
+
+        font-size: 36px;
+
+    }
+
+
+    .header p {
+
+        font-size: 18px;
+
+    }
+
+
+    .message {
+
+        font-size: 17px;
+
+    }
+
+
+    input {
+
+        font-size: 17px;
+
+    }
+
+
+    button {
+
+        font-size: 17px;
+
+    }
+
+}
+
+
 /* Mobile phones */
 
 @media (max-width: 480px) {
-
 
     body {
 
@@ -203,14 +311,14 @@ button {
 
         border-radius: 0;
 
-        padding: max(15px, env(safe-area-inset-top)) max(15px, env(safe-area-inset-right)) max(15px, env(safe-area-inset-bottom)) max(15px, env(safe-area-inset-left));
+        padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
 
     }
 
 
     .header h1 {
 
-        font-size: 24px;
+        font-size: 26px;
 
     }
 
@@ -219,7 +327,7 @@ button {
 
         max-width: 90%;
 
-        font-size: 14px;
+        font-size: 15px;
 
     }
 
@@ -233,36 +341,37 @@ button {
 
     input {
 
-        padding: 10px;
+        padding: 12px;
+        font-size: 15px;
 
     }
 
 
     button {
 
-        padding: 10px 15px;
+        padding: 12px 18px;
+        font-size: 15px;
 
     }
 
 }
 
 
-
 /* Small phones */
 
 @media (max-width: 350px) {
 
-
     .header h1 {
 
-        font-size: 21px;
+        font-size: 24px;
 
     }
 
 
     button {
 
-        padding: 10px;
+        padding: 12px;
+        font-size: 14px;
 
     }
 
