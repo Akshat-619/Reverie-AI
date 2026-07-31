@@ -4,30 +4,47 @@
 <head>
     <title>Reverie AI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom scrollbar for Webkit browsers */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280;
+        }
+    </style>
 </head>
 
-<body>
+<body class="min-h-screen min-h-[100dvh] bg-gray-900 flex items-center justify-center p-4 sm:p-6 lg:p-8">
 
-<div class="chat-container">
+<div class="chat-container w-full max-w-md sm:max-w-lg lg:max-w-2xl xl:max-w-3xl min-h-[600px] sm:min-h-[650px] lg:min-h-[700px] max-h-[90vh] max-h-[90dvh] bg-gray-800 rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 flex flex-col text-white shadow-2xl">
 
-    <div class="header">
-        <h1>🌙 Reverie</h1>
-        <p>Your AI companion</p>
+    <div class="header text-center mb-4 sm:mb-6">
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2">🌙 Reverie</h1>
+        <p class="text-gray-400 text-sm sm:text-base lg:text-lg">Your AI companion</p>
     </div>
 
 
-    <div id="chat-box"></div>
+    <div id="chat-box" class="flex-1 overflow-y-auto p-3 sm:p-4 scrollbar-thin"></div>
 
 
-    <div class="input-area">
+    <div class="input-area flex gap-2 sm:gap-3 lg:gap-4 mt-4 sm:mt-6">
 
         <input 
         id="message"
         placeholder="Share your thoughts..."
+        class="flex-1 min-w-0 px-4 py-3 sm:px-5 sm:py-3 lg:px-6 lg:py-4 bg-gray-700 rounded-xl sm:rounded-2xl text-white placeholder-gray-400 outline-none text-sm sm:text-base lg:text-lg focus:ring-2 focus:ring-indigo-500 transition-all"
         />
 
-        <button onclick="sendMessage()">
+        <button onclick="sendMessage()" class="px-5 py-3 sm:px-6 sm:py-3 lg:px-8 lg:py-4 bg-indigo-500 hover:bg-indigo-600 rounded-xl sm:rounded-2xl text-white font-medium text-sm sm:text-base lg:text-lg transition-all duration-200 active:scale-95 whitespace-nowrap touch-manipulation">
             Send
         </button>
 

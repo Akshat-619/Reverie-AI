@@ -1,11 +1,13 @@
 const chatBox = document.getElementById("chat-box");
 
-
 function addMessage(message,type){
-
     const div=document.createElement("div");
 
-    div.className=`message ${type}`;
+    const baseClasses = "p-3 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl max-w-[85%] sm:max-w-[80%] lg:max-w-[75%] break-words text-sm sm:text-base lg:text-lg leading-relaxed";
+    const userClasses = "bg-blue-600 ml-auto";
+    const botClasses = "bg-gray-700";
+    
+    div.className=`message ${baseClasses} ${type === 'user' ? userClasses : botClasses}`;
 
     div.innerText=message;
 
@@ -13,12 +15,11 @@ function addMessage(message,type){
 
     chatBox.scrollTop=chatBox.scrollHeight;
 
+
+
 }
 
-
-
 async function sendMessage(){
-
     const input=document.getElementById("message");
 
     const text=input.value.trim();
